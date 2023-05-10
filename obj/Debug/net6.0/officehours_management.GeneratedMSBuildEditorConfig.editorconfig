@@ -1,0 +1,144 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = officehours_management
+build_property.RootNamespace = officehours_management
+build_property.ProjectDir = F:\.NET projectss\officehours_management\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = F:\.NET projectss\officehours_management
+build_property._RazorSourceGeneratorDebug = 
+
+[F:/.NET projectss/officehours_management/Views/Account/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/.NET projectss/officehours_management/Views/Account/EditProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxFZGl0UHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/.NET projectss/officehours_management/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/.NET projectss/officehours_management/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/.NET projectss/officehours_management/Views/Home/DashBoards.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEYXNoQm9hcmRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/.NET projectss/officehours_management/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/.NET projectss/officehours_management/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/.NET projectss/officehours_management/Views/OfficeHour/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2ZmaWNlSG91clxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/.NET projectss/officehours_management/Views/OfficeHour/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2ZmaWNlSG91clxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/.NET projectss/officehours_management/Views/OfficeHour/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2ZmaWNlSG91clxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/.NET projectss/officehours_management/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/.NET projectss/officehours_management/Views/Shared/PartialViews/_Identity.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxWaWV3c1xfSWRlbnRpdHkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/.NET projectss/officehours_management/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/.NET projectss/officehours_management/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/.NET projectss/officehours_management/Views/Student/Enroll.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxFbnJvbGwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/.NET projectss/officehours_management/Views/Student/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/.NET projectss/officehours_management/Views/Student/Students.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxTdHVkZW50cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/.NET projectss/officehours_management/Views/Student/StudentSubjects.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxTdHVkZW50U3ViamVjdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/.NET projectss/officehours_management/Views/Student/Subjects.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxTdWJqZWN0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/.NET projectss/officehours_management/Views/SubjectDashBoard/AssignStaff.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViamVjdERhc2hCb2FyZFxBc3NpZ25TdGFmZi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/.NET projectss/officehours_management/Views/SubjectDashBoard/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViamVjdERhc2hCb2FyZFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/.NET projectss/officehours_management/Views/SubjectDashBoard/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViamVjdERhc2hCb2FyZFxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/.NET projectss/officehours_management/Views/SubjectDashBoard/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViamVjdERhc2hCb2FyZFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/.NET projectss/officehours_management/Views/SubjectDashBoard/Subjects.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViamVjdERhc2hCb2FyZFxTdWJqZWN0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/.NET projectss/officehours_management/Views/TeachingStaff/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hpbmdTdGFmZlxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/.NET projectss/officehours_management/Views/TeachingStaff/Staff.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hpbmdTdGFmZlxTdGFmZi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/.NET projectss/officehours_management/Views/TeachingStaff/Subjects.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hpbmdTdGFmZlxTdWJqZWN0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/.NET projectss/officehours_management/Views/TeachingStaff/TeachingStaffSubjects.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hpbmdTdGFmZlxUZWFjaGluZ1N0YWZmU3ViamVjdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/.NET projectss/officehours_management/Views/UserDashBoard/ManageUserAccount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckRhc2hCb2FyZFxNYW5hZ2VVc2VyQWNjb3VudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/.NET projectss/officehours_management/Views/UserDashBoard/Users.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckRhc2hCb2FyZFxVc2Vycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/.NET projectss/officehours_management/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/.NET projectss/officehours_management/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
