@@ -1,0 +1,34 @@
+﻿@inject UserManager<ApplicationUser> userManager;
+@{
+    ViewData["Title"] = "Home Page";
+    var currentUser = await userManager.GetUserAsync(User) ?? null;
+}
+
+<div class="text-center">
+    @if(@currentUser != null)
+    {
+        <h3 class="display-4">Welcome @currentUser.FullName</h3>
+    }else{
+        <div class="row">
+            <div class="col">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-md-6 offset-3">
+                <div class="col-md-8 offset-2 text-center shadow-none p-4 mb-4 bg-light">
+                    <a asp-controller="Account" asp-action="Login" class="btn btn-outline-success btn-block">Login</a>
+                    <div class="col-md-4 offset-4 text-center"><span>or</span></div>
+                    <a asp-controller="Account" asp-action="Register" class="btn btn-outline-primary btn-block">Register</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

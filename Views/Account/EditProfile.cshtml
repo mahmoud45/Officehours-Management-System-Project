@@ -1,0 +1,56 @@
+@model ApplicationUser
+@inject UserManager<ApplicationUser> userManager;
+
+@{
+    ViewData["Title"] = "Edit Profile";
+    var UserRoles = await userManager.GetRolesAsync(Model);
+
+    string _UserRoles = "";
+    foreach(string role in UserRoles)
+    {
+        _UserRoles += role + "-";
+    }
+
+    _UserRoles = _UserRoles.Remove(_UserRoles.Length-1);
+}
+
+<div class="row align-items-center">
+    <div class="col-md-6 offset-3 justify-content-center shadow-none p-4 mb-4 bg-light card">
+        <form id="EditProfileForm" action="EditProfile">
+            @Html.AntiForgeryToken()
+            <div class="row row-cols-1 text-danger" asp-validation-summary="ModelOnly"></div>
+
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" value=@Model.Email disabled="disabled">
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            
+            @if(UserRoles.Any())
+            {
+                <div class="form-group">
+                    <label for="Roles" class="control-label">Roles</label>
+                    <input type="text" id="Roles" name="Roles" class="form-control" value=@_UserRoles disabled="disabled">
+                </div>
+            }
+
+            <div class="form-group">
+                <label asp-for="FullName" class="control-label"></label>
+                <input asp-for="FullName" class="form-control" value=@Model.FullName>
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label">Username</label>
+                <input asp-for="UserName" class="form-control" value=@Model.UserName disabled="disabled">
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-outline-success float-right">
+            </div>
+            <span id="msg"></span>
+        </form>
+    </div>
+</div>
+<script src="~/js/EditProfile.js"></script>

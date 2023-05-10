@@ -1,0 +1,58 @@
+@model IPagedList<Subject>
+@using X.PagedList;
+@using X.PagedList.Mvc.Core;
+
+@{
+    ViewData["Title"] = TempData["StaffName"] + " Subjects";
+}
+
+<div class="row row-cols-1 justify-content-md-center">
+    <div class="col col-md-10 offset-1">
+        <h3>Subjects</h3>
+        @if(TempData["Error"] != null)
+        {
+            <div class="col-md-12 alert alert-danger">
+                <span><b>@TempData["Error"]</b></span>
+            </div>
+        }
+        <div class="row row-cols-1">
+            <div class="col">
+                <table class="table">
+                    <thead style="text-align: center;">
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Staff
+                        </th>
+                    </thead>
+                    @foreach (var subject in Model)
+                    {
+                        <tr style="text-align: center;">
+                            <td>
+                                @Html.DisplayFor(modelItem => subject.Name)
+                            </td>
+                            <td>
+                                @if(subject.Subjects_Staff.Any())
+                                {
+                                    @foreach(var subject_staff in subject.Subjects_Staff)
+                                    {
+                                        <a asp-action="Details" asp-controller="TeachingStaff" asp-route-Id=@subject_staff.Staff.Id>
+                                            @subject_staff.Staff.FullName
+                                        </a>
+                                    }
+                                }else{
+                                    <span> - </span>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </table>
+                Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+                @Html.PagedListPager(Model, page => Url.Action("TeachingStaffSubjects", 
+                    new { page, staffName=TempData["StaffName"]}))
+            </div>
+            <br/>
+        </div>
+    </div>
+</div>  

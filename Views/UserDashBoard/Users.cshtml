@@ -1,0 +1,72 @@
+@model IPagedList<ApplicationUser>
+@using X.PagedList;
+@using X.PagedList.Mvc.Core;
+@inject UserManager<ApplicationUser> usermanager;
+
+@{
+    ViewData["Title"] = "Users";
+}
+
+<div class="row row-cols-1 justify-content-md-center">
+    <div class="col col-md-10 offset-1">
+        <h3>Users</h3>
+        <form action="Users" method="GET">
+            <label for="SearchString">Search: </label>
+            <input type="text" name="SearchString" placeholder="Search By Name">
+            <input type="submit" value="Search">
+        </form>
+        <div class="row row-cols-1">
+            <div class="col">
+                <table class="table">
+                    <thead style="text-align: center;">
+                        <th>
+                            Full Name
+                        </th>
+                        <th>
+                            Username
+                        </th>
+                        <th>
+                            Email
+                        </th>
+                        <th>
+                            Roles
+                        </th>
+                        <th>Actions</th>
+                    </thead>
+                    @foreach (var user in Model)
+                    {
+                        <tr style="text-align: center;">
+                            <td>
+                                @Html.DisplayFor(modelItem => user.FullName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => user.UserName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => user.Email)
+                            </td>
+                            <td>
+                                @{
+                                    var roles = await usermanager.GetRolesAsync(user);
+                                    @foreach(var role in roles)
+                                    {
+                                        <span>@role</span><br>
+                                    }
+                                }
+                            </td>
+                            <td>
+                                @Html.ActionLink("Manage Account", "ManageUserAccount", new {UserName = user.UserName})
+                            </td>
+                        </tr>
+                    }
+                </table>
+                Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+                @Html.PagedListPager(Model, page => Url.Action("Users", 
+                    new { page}))
+
+            </div>
+            <br/>
+            
+        </div>
+    </div>
+</div>

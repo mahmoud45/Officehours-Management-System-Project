@@ -1,0 +1,29 @@
+@inject UserManager<ApplicationUser> userManager;
+
+
+@if(User.Identity.IsAuthenticated)
+{
+    @*User Profile Section*@
+    <div class="dropdown" style="display: flex;width: 100%;flex-wrap: wrap;justify-content: flex-end;">
+        <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="profile-btn" aria-expanded="false"
+        data-toggle="dropdown">
+            <i class="bi bi-gear"></i>
+        </button>
+        <ul class="dropdown-menu" style="padding-left: 0px;margin-top: 0.6rem;left:auto" aria-labelledby="profile-btn">
+            <li>
+                <a class="dropdown-item" asp-action="EditProfile" asp-route-username=@userManager.GetUserName(User) asp-controller="Account">
+                    <i class="bi bi-person-circle"></i> Profile
+                </a>
+                @if(User.IsInRole("Admin") || User.IsInRole("SuperUser"))
+                {
+                    <a class="dropdown-item" asp-action="DashBoards" asp-controller="Home">
+                        <i class="bi bi-clipboard-fill"></i> DashBoards
+                    </a>
+                }
+                <a class="dropdown-item" asp-action="SignOut" asp-controller="Account">
+                    <i class="bi bi-box-arrow-in-left"></i> Sign Out
+                </a>
+            </li>
+        </ul>
+    </div>
+}

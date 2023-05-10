@@ -1,0 +1,31 @@
+@inject UserManager<ApplicationUser> userManager;
+    @{
+        var currentUser = await userManager.GetUserAsync(User) ?? null;
+        ViewData["Title"] = currentUser.FullName;
+    }
+    
+    <div class="text-center">
+        @if(@currentUser != null)
+        {
+            <h3 class="display-4">Welcome @currentUser.UserName</h3>
+            <div class="row row-cols-1">
+                <div class="col col-md" style="height: 120px;">
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-md-6 offset-3">
+                    <div class="col-md-8 offset-2 text-center shadow-none p-4 mb-4 bg-light">
+                        <a asp-controller="TeachingStaff" asp-action="Subjects" class="btn btn-outline-success btn-block">Subjects</a>
+                        <br>
+                        <a asp-controller="TeachingStaff" asp-action="TeachingStaffSubjects" class="btn btn-outline-success btn-block" asp-route-staffName=@currentUser.UserName>Your Subjects</a>
+                        <br>
+                        <a asp-controller="OfficeHour" asp-action="Index" class="btn btn-outline-success btn-block" asp-route-staffName=@currentUser.UserName>Office Hours</a>
+                        <br>
+                        <a asp-controller="TeachingStaff" asp-action="Staff" class="btn btn-outline-success btn-block">Teaching Staff</a>
+                        <br>
+                        <a asp-controller="Student" asp-action="Students" class="btn btn-outline-success btn-block">Students</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>

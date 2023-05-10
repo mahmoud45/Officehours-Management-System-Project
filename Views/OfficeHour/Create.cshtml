@@ -1,0 +1,51 @@
+@model OfficeHour
+@inject UserManager<ApplicationUser> userManager
+
+@{
+    var currentUser = await userManager.GetUserAsync(User) ?? null;
+    ViewData["Title"] = "Office Hour";
+}
+
+<div class="row">
+    <div class="col-md-6 offset-3">
+        <h3 class="display-4"><span>Create Office Hour</span></h3>
+
+        @if(TempData["Error"] != null)
+        {
+            <div class="col-md-12 alert alert-danger">
+                <span><b>@TempData["Error"]</b></span>
+            </div>
+        }
+
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <form asp-action="Create">
+                    @Html.AntiForgeryToken()
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="form-group">
+                        <label asp-for="Day" class="control-label"></label>
+                        <select asp-for="Day" class="form-control" asp-items="ViewBag.Day"></select>
+                        <span asp-validation-for="Day" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="StartHour" class="control-label"></label>
+                        <input asp-for="StartHour" class="form-control">
+                        <span asp-validation-for="StartHour" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="EndHour" class="control-label"></label>
+                        <input asp-for="EndHour" class="form-control">
+                        <span asp-validation-for="EndHour" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" name="staffName" value="@currentUser.UserName">
+                        <input type="submit" value="Create" class="btn btn-outline-success float-right">
+                        <a asp-controller="OfficeHour" asp-action="Index" asp-route-staffName="@currentUser.UserName" class="btn btn-outline-secondary">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

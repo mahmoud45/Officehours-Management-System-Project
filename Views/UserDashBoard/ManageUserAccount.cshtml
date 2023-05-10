@@ -1,0 +1,73 @@
+@model ApplicationUser;
+@inject UserManager<ApplicationUser> usermanager;
+@{
+    ViewData["Title"] = Model.UserName + " Promote";
+
+    var AllRoles = TempData["AllRoles"] as List<string>;
+    var currentUserRoles = await usermanager.GetRolesAsync(Model);
+}
+
+<div class="row row-cols-1 justify-content-md-center">
+    <div class="col col-md-10 offset-1">
+        <h3>@Model.UserName</h3>
+        @if(TempData["error"] != null)
+        {
+            <div class="col-md-12 alert alert-danger">
+                <span><b>@TempData["error"]</b></span>
+            </div>
+        }
+        <div class="row row-cols-1">
+            <div class="col">
+                <table class="table">
+                    <thead style="text-align: center;">
+                        <th>
+                            Username
+                        </th>
+                        <th>
+                            Active
+                        </th>
+                        @foreach(string role in AllRoles)
+                        {
+                            if(!role.Equals("SuperUser"))
+                            {
+                                <th>
+                                    @role
+                                </th>
+                            }
+                        }
+                        <th>Actions</th>
+                    </thead>
+                        <tr style="text-align: center;">
+                            <td>
+                                @Model.UserName
+                            </td>
+                            <form action="ManageUserAccount" method="POST">
+                                @Html.AntiForgeryToken()
+                                <td>
+                                    @Html.CheckBox("is_active", @Model.is_active)
+                                </td>
+                                @foreach(string role in AllRoles)
+                                {
+                                    if(role.Equals("User"))
+                                    {
+                                        <td>
+                                            @Html.CheckBox(role, currentUserRoles.Contains(role), new { @onclick = "return false"})
+                                        </td>
+                                    }
+                                    else if(!role.Equals("SuperUser")){
+                                        <td>@Html.CheckBox(role, currentUserRoles.Contains(role))</td>
+                                    }
+                                }
+                                <td>
+                                    <input type="submit" value="Confirm">
+                                    @Html.HiddenFor(user => @Model.UserName)
+                                </td>
+                            </form>
+                        </tr>
+                </table>
+                <a class="btn btn-outline-primary float-right" asp-action="Users">Cancel</a>
+            </div>
+            <br/>
+        </div>
+    </div>
+</div>

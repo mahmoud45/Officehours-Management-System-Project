@@ -1,0 +1,16 @@
+@{
+    ViewData["Title"] = "Dashboards";
+}
+
+<div class="row row-cols-1 justify-content-md-center">
+    <div class="col col-md-10 offset-1">
+        <div class="row row-cols-1 justify-content-md-center">
+            <div class="col">
+                <a asp-controller="UserDashBoard" asp-action="Users" class="btn btn-outline-success btn-block">View Users</a>
+            </div>
+            <div class="col">
+                <a asp-controller="SubjectDashBoard" asp-action="Subjects" class="btn btn-outline-success btn-block">View Subjects</a>
+            </div>
+        </div>
+    </div>
+</div>

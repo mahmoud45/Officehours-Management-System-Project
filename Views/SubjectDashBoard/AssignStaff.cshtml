@@ -1,0 +1,71 @@
+@model IPagedList<KeyValuePair<ApplicationUser, bool>>
+@using X.PagedList;
+@using X.PagedList.Mvc.Core;
+
+@{
+    ViewData["Title"] = "Staff";
+}
+
+<div class="row row-cols-1 justify-content-md-center">
+    <div class="col col-md-10 offset-1">
+        <h3>Staff</h3>
+        @if(TempData["Error"] != null)
+        {
+            <div class="col-md-12 alert alert-danger">
+                <span><b>@TempData["Error"]</b></span>
+            </div>
+        }
+        <form action="AssignStaff" method="GET">
+            <label for="SearchString">Search: </label>
+            <input type="text" name="SearchString" placeholder="Search By Name">
+            <input type="submit" value="Search">
+        </form>
+        <div class="row row-cols-1">
+            <div class="col">
+                <form action="AssignStaff" method="post">
+                    @Html.AntiForgeryToken()
+                    @Html.Hidden("subjectId", new { @value = @TempData["subjectId"]})
+                    <table class="table">
+                        <thead style="text-align: center;">
+                            <th>
+                                Full Name
+                            </th>
+                            <th>
+                                Email
+                            </th>
+                            <th>
+                                Assign
+                            </th>
+                        </thead>
+                        
+                            @foreach (var (staff, value) in Model)
+                            {
+                                <tr style="text-align: center;">
+                                    <td>
+                                        <a asp-action="Users" asp-controller="UserDashBoard" asp-route-SearchString=@staff.FullName>
+                                            @Html.DisplayFor(modelItem => staff.FullName)
+                                        </a>
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => staff.Email)
+                                    </td>
+                                    <td>
+                                        @Html.CheckBox(staff.Id, value)
+                                    </td>
+                                </tr>
+                            }
+                    </table>
+                    <input class="btn btn-outline-success float-right" type="submit" value="Confirm">
+                </form>
+                Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+                @Html.PagedListPager(Model, page => Url.Action("AssignStaff", 
+                    new {page=page, subjectId=TempData["subjectId"]}))
+                <a class="btn btn-outline-success float-right" asp-action="Subjects" asp-controller="SubjectDashBoard">
+                    Cancel
+                </a>
+            </div>
+            <br/>
+        </div>
+    </div>
+</div>
+        
