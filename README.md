@@ -16,7 +16,6 @@ Assignment about managing and view teaching staff office hours.
       </ul>
     </li>
     <li><a href="#Concepts-included-in-project">General concepts in project</a></li>
-    <li><a href="#license">License</a></li>
     </ol>
 </details>
 
