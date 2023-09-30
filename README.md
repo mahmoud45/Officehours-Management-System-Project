@@ -59,6 +59,7 @@ This section show all project features
 <!-- USAGE EXAMPLES -->
 ## Usage
 To Learn how to use program you can watch <a href="https://vimeo.com/manage/videos/869869377">this vedio</a>
+Or  <a href="https://archive.org/details/project-usage">this vedio</a>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
